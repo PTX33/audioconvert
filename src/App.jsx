@@ -1,9 +1,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { FFmpeg } from '@ffmpeg/ffmpeg'
-import { fetchFile } from '@ffmpeg/util'
-import coreURL from '@ffmpeg/core?url'
-import wasmURL from '@ffmpeg/core/wasm?url'
+import { fetchFile, toBlobURL } from '@ffmpeg/util'
 
 import './App.css'
 
@@ -73,9 +71,18 @@ function App() {
     if (!ffmpeg.loaded) {
       setStatus('Loading audio engine...')
 
+      const baseURL =
+        'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm'
+
       await ffmpeg.load({
-        coreURL,
-        wasmURL,
+        coreURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.js`,
+          'text/javascript'
+        ),
+        wasmURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.wasm`,
+          'application/wasm'
+        ),
       })
     }
 
