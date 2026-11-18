@@ -206,15 +206,14 @@ function App() {
             Convert audio.<br />
             <span>Without limits.</span>
           </h1>
-
           <p>
-            Convert your audio files to the format you need.<br />
+            Convert MP3, WAV and OGG audio files online.
+            <br />
             Free, simple and directly in your browser.
           </p>
         </section>
 
         <section className="ac-panel">
-
           <div
             className={`ac-drop ${dragging ? 'over' : ''}`}
             onClick={() => fileInputRef.current?.click()}
@@ -273,10 +272,8 @@ function App() {
           )}
 
           <div className="ac-settings">
-
             <div className="ac-field">
               <label htmlFor="format">Convert to</label>
-
               <select
                 id="format"
                 value={format}
@@ -295,7 +292,6 @@ function App() {
 
             <div className="ac-field">
               <label htmlFor="quality">MP3 quality</label>
-
               <select
                 id="quality"
                 value={quality}
@@ -307,7 +303,6 @@ function App() {
                 <option value="320">320 kbps</option>
               </select>
             </div>
-
           </div>
 
           {alreadySameFormat && (
@@ -352,7 +347,156 @@ function App() {
               Download {resultName}
             </a>
           )}
+        </section>
 
+        <section className="ac-content">
+          <div className="ac-content-heading">
+            <span className="ac-content-label">AUDIOCONVERT</span>
+            <h2>A simple free online audio converter</h2>
+            <p>
+              AudioConvert makes it easy to change audio files
+              between popular formats. Convert your audio online
+              without installing additional software or creating an account.
+            </p>
+          </div>
+
+          <div className="ac-content-grid">
+            <article className="ac-info-card">
+              <div className="ac-info-icon">🎧</div>
+              <h3>MP3 Converter</h3>
+              <p>
+                Convert audio to MP3, a widely supported format
+                that offers a practical balance between sound
+                quality and file size.
+              </p>
+            </article>
+
+            <article className="ac-info-card">
+              <div className="ac-info-icon">🎼</div>
+              <h3>WAV Converter</h3>
+              <p>
+                Convert audio to WAV when you need an uncompressed
+                audio format for editing, production or compatible
+                audio applications.
+              </p>
+            </article>
+
+            <article className="ac-info-card">
+              <div className="ac-info-icon">🔊</div>
+              <h3>OGG Converter</h3>
+              <p>
+                Convert audio to OGG, an open audio format supported
+                by many media players and applications.
+              </p>
+            </article>
+          </div>
+
+          <div className="ac-how">
+            <div className="ac-content-heading">
+              <span className="ac-content-label">QUICK GUIDE</span>
+              <h2>How to convert audio files</h2>
+              <p>
+                Change your audio format in three simple steps.
+              </p>
+            </div>
+
+            <div className="ac-steps">
+              <article className="ac-step">
+                <span>01</span>
+                <h3>Upload your audio</h3>
+                <p>
+                  Select an audio file from your device or drag
+                  and drop it into the converter.
+                </p>
+              </article>
+
+              <article className="ac-step">
+                <span>02</span>
+                <h3>Choose a format</h3>
+                <p>
+                  Select MP3, WAV or OGG as your desired output
+                  format. Adjust MP3 quality if needed.
+                </p>
+              </article>
+
+              <article className="ac-step">
+                <span>03</span>
+                <h3>Convert and download</h3>
+                <p>
+                  Start the conversion and download your converted
+                  audio file when it is ready.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div className="ac-privacy">
+            <div className="ac-info-icon">🔒</div>
+            <div>
+              <h2>Audio conversion in your browser</h2>
+              <p>
+                AudioConvert processes your selected audio files
+                locally in your browser using FFmpeg WebAssembly.
+                Your audio files are not uploaded to AudioConvert
+                servers for conversion. Processing speed and the
+                maximum practical file size depend on your device
+                and available memory.
+              </p>
+            </div>
+          </div>
+
+          <div className="ac-faq">
+            <div className="ac-content-heading">
+              <span className="ac-content-label">HELP CENTER</span>
+              <h2>Frequently asked questions</h2>
+            </div>
+
+            <details>
+              <summary>Is AudioConvert free to use?</summary>
+              <p>
+                Yes. AudioConvert is free to use. You can convert
+                audio files without creating an account or paying
+                for a subscription.
+              </p>
+            </details>
+
+            <details>
+              <summary>Which audio formats can I convert?</summary>
+              <p>
+                You can choose MP3, WAV or OGG as the output format.
+                The converter accepts common audio file types,
+                although compatibility can depend on the file codec.
+              </p>
+            </details>
+
+            <details>
+              <summary>Are my audio files uploaded to a server?</summary>
+              <p>
+                No. The conversion is performed locally in your
+                browser. Your selected audio file is not uploaded
+                to AudioConvert servers for conversion.
+              </p>
+            </details>
+
+            <details>
+              <summary>Do I need to install software?</summary>
+              <p>
+                No. AudioConvert works in a modern web browser.
+                The audio engine loads when you start your first
+                conversion.
+              </p>
+            </details>
+
+            <details>
+              <summary>Does converting to MP3 reduce file size?</summary>
+              <p>
+                MP3 is a compressed audio format and can produce
+                smaller files than uncompressed WAV. The resulting
+                size depends on the audio duration and selected
+                bitrate.
+              </p>
+            </details>
+          </div>
         </section>
 
         <footer className="ac-footer">

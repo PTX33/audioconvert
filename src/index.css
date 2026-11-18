@@ -339,3 +339,198 @@ body {
     gap: 15px !important;
   }
 }
+
+
+/* Additional AudioConvert content */
+
+.ac-content {
+  max-width: 900px;
+  margin: 85px auto 0;
+}
+
+.ac-content-heading {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.ac-content-label {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: #8756ed;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ac-content-heading h2 {
+  margin: 0 0 14px;
+  color: #302447;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.ac-content-heading p {
+  margin: 0;
+  color: #777087;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ac-content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.ac-info-card {
+  padding: 25px 21px;
+  background: rgba(255, 255, 255, .8);
+  border: 1px solid #eae5f5;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(77, 52, 130, .035);
+}
+
+.ac-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: #eee7ff;
+  font-size: 22px;
+}
+
+.ac-info-card h3,
+.ac-step h3 {
+  margin: 0 0 10px;
+  color: #302447;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.ac-info-card p,
+.ac-step p {
+  margin: 0;
+  color: #777087;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ac-how {
+  margin-top: 85px;
+}
+
+.ac-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.ac-step {
+  padding: 22px;
+  border-left: 2px solid #d9c9ff;
+  background: rgba(255, 255, 255, .55);
+  border-radius: 0 14px 14px 0;
+}
+
+.ac-step > span {
+  display: block;
+  margin-bottom: 17px;
+  color: #8756ed;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ac-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 75px;
+  padding: 28px;
+  background: #f1edff;
+  border: 1px solid #e3d9ff;
+  border-radius: 19px;
+}
+
+.ac-privacy .ac-info-icon {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.ac-privacy h2 {
+  margin: 3px 0 10px;
+  color: #302447;
+  font-size: 19px;
+}
+
+.ac-privacy p {
+  margin: 0;
+  color: #6e6480;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ac-faq {
+  max-width: 760px;
+  margin: 85px auto 0;
+}
+
+.ac-faq details {
+  margin-bottom: 12px;
+  padding: 19px 21px;
+  background: rgba(255, 255, 255, .85);
+  border: 1px solid #eae5f5;
+  border-radius: 13px;
+}
+
+.ac-faq summary {
+  color: #302447;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ac-faq details p {
+  margin: 13px 0 0;
+  color: #777087;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .ac-content {
+    margin-top: 65px;
+  }
+
+  .ac-content-grid,
+  .ac-steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ac-info-card {
+    padding: 22px;
+  }
+
+  .ac-how,
+  .ac-faq {
+    margin-top: 65px;
+  }
+
+  .ac-privacy {
+    margin-top: 55px;
+    padding: 21px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ac-privacy {
+    flex-direction: column;
+  }
+}
