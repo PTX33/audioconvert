@@ -3,9 +3,12 @@ import { useState, useRef, useEffect } from 'react'
 import { FFmpeg } from '@ffmpeg/ffmpeg'
 import { fetchFile, toBlobURL } from '@ffmpeg/util'
 
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfUse from './pages/TermsOfUse'
+import Contact from './pages/Contact'
 import './App.css'
 
-function App() {
+function AudioConverter() {
   const ffmpegRef = useRef(null)
   const fileInputRef = useRef(null)
 
@@ -500,14 +503,44 @@ function App() {
         </section>
 
         <footer className="ac-footer">
-          Your files are processed in your browser and are not uploaded to our servers.
-          <br />
-          Only convert audio files you own or have permission to use.
-        </footer>
+  <p>
+    Your files are processed in your browser and are not uploaded to our servers.
+    <br />
+    Only convert audio files you own or have permission to use.
+  </p>
+
+  <nav className="ac-footer-links" aria-label="Legal links">
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-of-use">Terms of Use</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <p className="ac-footer-copy">
+    © {new Date().getFullYear()} AudioConvert
+  </p>
+</footer>
 
       </div>
     </main>
   )
+}
+
+function App() {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/'
+
+  if (path === '/privacy-policy') {
+    return <PrivacyPolicy />
+  }
+
+  if (path === '/terms-of-use') {
+    return <TermsOfUse />
+  }
+
+  if (path === '/contact') {
+    return <Contact />
+  }
+
+  return <AudioConverter />
 }
 
 export default App
